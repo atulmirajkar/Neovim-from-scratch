@@ -19,6 +19,24 @@ vim.g.maplocalleader = " "
 --   command_mode = "c",
 
 -- Normal --
+
+
+-- primeagen tricks
+-- page down and set line to middle of screen
+keymap("n", "<C-d>", "<C-d>zz", opts)
+keymap("n", "<C-u>", "<C-u>zz", opts)
+
+-- search and set line to middle of screen, zv to unfold if folded
+keymap("n", "n", "nzzzv", opts)
+keymap("n", "N", "Nzzzv", opts)
+keymap("n", "N", "Nzzzv", opts)
+
+-- " \"_ is the black hole register, "_d deletes to the blackhole register, \ is
+-- " added to escape
+keymap("n", "<leader>d", "_d", opts)
+keymap("x", "<leader>d", "_d", opts)
+keymap("x", "<leader>p", "_dp", opts)
+
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
