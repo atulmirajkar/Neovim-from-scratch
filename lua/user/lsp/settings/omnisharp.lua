@@ -1,5 +1,8 @@
 -- download from https://github.com/OmniSharp/omnisharp-roslyn/releases and store on local machine
 -- use the path of OmniSharp.dll below
+-- use link below to copy most of the settings
+-- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#omnisharp
+-- todo use a local variable to set the path. use that variable in init.lua
 return{
     cmd = { "dotnet", "/home/amirajka/work/omnisharp-roslyn-dll/OmniSharp.dll" },
 
