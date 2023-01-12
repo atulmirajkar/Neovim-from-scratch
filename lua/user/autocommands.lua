@@ -28,7 +28,15 @@ vim.cmd [[
     autocmd!
     autocmd User AlphaReady set showtabline=0 | autocmd BufUnload <buffer> set showtabline=2
   augroup end
+
+  if system('uname -r') =~ "microsoft"
+    augroup _wslyank
+        autocmd!
+        autocmd TextYankPost * :call system('/mnt/c/windows/system32/clip.exe',@")
+    augroup END
+  endif
 ]]
+
 
 -- Autoformat
 -- augroup _lsp

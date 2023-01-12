@@ -45,7 +45,7 @@ return packer.startup(function(use)
   use {"tpope/vim-surround"}
   --use {"tpope/vim-commentary"}
   use {"michaeljsmith/vim-indent-object"}
-  --use {"wellle/targets.vim"} 
+  --use {"wellle/targets.vim"}
 
   --from mc
   use { "wbthomason/packer.nvim", commit = "6afb67460283f0e990d35d229fd38fdc04063e0a" } -- Have packer manage itself
@@ -68,6 +68,7 @@ return packer.startup(function(use)
 	-- Colorschemes
   use { "folke/tokyonight.nvim", commit = "66bfc2e8f754869c7b651f3f47a2ee56ae557764" }
   use { "lunarvim/darkplus.nvim", commit = "13ef9daad28d3cf6c5e793acfc16ddbf456e1c83" }
+use "EdenEast/nightfox.nvim" 
 
 	-- Cmp 
   use { "hrsh7th/nvim-cmp", commit = "b0dff0ec4f2748626aae13f011d1a47071fe9abc" } -- The completion plugin
