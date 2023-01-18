@@ -43,9 +43,7 @@ return packer.startup(function(use)
 
   --personal
   use {"tpope/vim-surround"}
-  --use {"tpope/vim-commentary"}
   use {"michaeljsmith/vim-indent-object"}
-  --use {"wellle/targets.vim"}
 
   --from mc
   use { "wbthomason/packer.nvim", commit = "6afb67460283f0e990d35d229fd38fdc04063e0a" } -- Have packer manage itself
