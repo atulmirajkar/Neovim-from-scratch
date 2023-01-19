@@ -54,7 +54,7 @@ cmp.setup {
       return true
     end
   end,
-  pet = {
+  snippet = {
     expand = function(args)
       luasnip.lsp_expand(args.body) -- For `luasnip` users.
     end,
