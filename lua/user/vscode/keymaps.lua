@@ -4,7 +4,7 @@ local opts = { noremap = true, silent = true }
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
 
---Remap space as leader key
+--Remap space as leader key - space is not working as leader key
 keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
@@ -40,6 +40,11 @@ keymap("i", "kj", "<ESC>", opts)
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
+-- "_ is the black hole register, "_d deletes to the blackhole register, \ is
+-- the following though is not working. Added which key bindings for space + d to send "_d
+keymap("n", "<leader>d", '"_d', opts)
+keymap("x", "<leader>d", '"_d', opts)
+
 -- pasting without copying when deleting the selected text
 keymap("v", "p", '"_dP', opts)
 
@@ -63,4 +68,17 @@ keymap("n","<C-h>",":call VSCodeNotify('workbench.action.navigateLeft')<CR>",opt
 keymap("n","<C-h>",":call VSCodeNotify('workbench.action.navigateLeft')<CR>",opts)
 keymap("n","<C-l>",":call VSCodeNotify('workbench.action.navigateRight')<CR>",opts)
 keymap("n","<C-l>",":call VSCodeNotify('workbench.action.navigateRight')<CR>",opts)
+
+-- https://github.com/vscode-neovim/vscode-neovim/issues/58#issuecomment-630551787
+-- if recording a macro dont map j --> gj or k -->gk
+local moveCursor = function(direction)
+    if vim.fn.reg_recording() == "" and vim.fn.reg_executing() == "" then
+        return "g"..direction
+    else
+        return  direction
+    end
+
+end
+keymap("n","j",moveCursor("j"), {silent = true})
+keymap("n","k",moveCursor("k"), {silent = true})
 
