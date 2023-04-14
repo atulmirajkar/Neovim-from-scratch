@@ -82,3 +82,6 @@ end
 keymap("n","j",moveCursor("j"), {silent = true})
 keymap("n","k",moveCursor("k"), {silent = true})
 
+-- comments
+keymap("n","gc",":VSCodeCommentary<CR>",opts)
+keymap("x","gc",":VSCodeCommentary<CR>",opts)
